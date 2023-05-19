@@ -12,7 +12,7 @@ services:
 
   api:
     build:
-      context: .
+      context: ..
       dockerfile: Dockerfile
     restart: always
     env_file: .env
@@ -28,7 +28,7 @@ services:
 
   migrations:
     build:
-      context: .
+      context: ..
       dockerfile: Dockerfile
     restart: always
     env_file: .env
@@ -47,6 +47,7 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
     restart: always
+    container_name: db
     ports:
     - "5432:5432"
     healthcheck:
