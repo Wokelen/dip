@@ -12,7 +12,7 @@ services:
 
   api:
     build:
-      context: .
+      context: ..
       dockerfile: Dockerfile
     restart: always
     env_file: .env
@@ -28,7 +28,7 @@ services:
 
   migrations:
     build:
-      context: .
+      context: ..
       dockerfile: Dockerfile
     restart: always
     env_file: .env

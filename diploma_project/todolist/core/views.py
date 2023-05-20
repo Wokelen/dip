@@ -1,9 +1,8 @@
-
 from django.contrib.auth import get_user_model, login, logout
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 
-from serializers import RegisterSerializer, LoginSerializer, UserSerializer, UpdatePasswordSerializer
+from serializers import RegistrationSerializer, LoginSerializer, UserSerializer, UpdatePasswordSerializer
 
 USER_MODEL = get_user_model()
 
@@ -11,7 +10,7 @@ USER_MODEL = get_user_model()
 class RegistrationView(generics.CreateAPIView):
     model = USER_MODEL
     permission_classes = [permissions.AllowAny]
-    serializer_class = RegisterSerializer
+    serializer_class = RegistrationSerializer
 
 
 class LoginView(generics.CreateAPIView):
