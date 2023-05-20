@@ -65,7 +65,8 @@ REST_FRAMEWORK = {
 }
 WSGI_APPLICATION = 'todolist.wsgi.application'
 
-
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',)
 DATABASES = {
     "default": {
         "ENGINE": 'django.db.backends.postgresql',
